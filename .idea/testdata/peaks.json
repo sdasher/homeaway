@@ -1,0 +1,17 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.222972002957,36.83350319709727]},"properties":{"Name":"Little Costilla","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"20","Field_1":"Little Costilla"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.1314707514773,36.46417388178133]},"properties":{"Name":"Big Red","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"22","Field_1":"Big Red"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.082136641144,36.44961294743106]},"properties":{"Name":"Black Mountain","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"23","Field_1":"Black Mountain"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.1594967374006,36.47666628343625]},"properties":{"Name":"Mount Phillips","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"24","Field_1":"Mount Phillips"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0856668901773,36.38831750093723]},"properties":{"Name":"Lookout Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"26","Field_1":"Lookout Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.2045500874808,36.80747679816981]},"properties":{"Name":"Ash Mountain","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"27","Field_1":"Ash Mountain"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.2128430640003,36.63030595044561]},"properties":{"Name":"Baldy Mountain","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"28","Field_1":"Baldy Mountain"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.1168703097238,36.44422121009078]},"properties":{"Name":"Bonito Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"29","Field_1":"Bonito Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0240048272481,36.62803964059606]},"properties":{"Name":"Hart Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"21","Field_1":"Hart Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.1436958552182,36.47977480381853]},"properties":{"Name":"Comanche Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"30","Field_1":"Comanche Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0372144538808,36.45046737742204]},"properties":{"Name":"Shaefers Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"31","Field_1":"Shaefers Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0572910449509,36.48735795532093]},"properties":{"Name":"Window Rock","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"32","Field_1":"Window Rock"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0681821969886,36.40966156351886]},"properties":{"Name":"Trail Peak","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"33","Field_1":"Trail Peak"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.0079603544586,36.44814536681537]},"properties":{"Name":"Tooth of Time","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"34","Field_1":"Tooth of Time"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-105.1087349259917,36.64083585680527]},"properties":{"Name":"Wilson Mesa","descriptio":"","altitudeMo":"clampToGround","Type":"Peak","FID_1":"36","Field_1":"Wilson Mesa"}}
+]}

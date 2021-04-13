@@ -1,0 +1,93 @@
+doctype html
+html
+  head
+    title Sister County
+      link(rel='stylesheet' href='/stylesheets/leaflet.css')
+      link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+      link(href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet")
+      link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    .container
+      // optionally define the sidebar content via HTML markup
+      #sidebar.leaflet-sidebar.collapsed
+        // nav tabs
+        .leaflet-sidebar-tabs
+          // top aligned tabs
+          ul(role='tablist')
+            li
+              a(href='#home' role='tab')
+                i.fa.fa-bars.active
+          // bottom aligned tabs
+          // panel content
+          .leaflet-sidebar-content
+            // county stats
+            #countystats.leaflet-sidebar-pane
+              h1.leaflet-sidebar-header
+                | {County Name}
+                span.leaflet-sidebar-close
+                  i.fa.fa-caret-left
+              h3 Facts About {County Name}
+              ul
+                li Population:
+                li Median Income:
+                li Political Affiliation:
+                li Percent with Bachelor's Degree:
+                li Social Capital:
+                li Natural Amenities:
+            // range sliders
+            #sliders.leaflet-sidebar-pane
+              h1.leaflet-sidebar-header
+                | Filters
+                span.leaflet-sidebar-close
+                  i.fa.fa-caret-left
+              p Filter counties by the following criteria:
+              .list-group.item-sidebar
+                p
+                  label(for='amount') Range 1:
+                  input#amount1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider1.slider-range
+                p
+                p
+                  label(for='amount') Range 2:
+                  input#amount2(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider2.slider-range
+                p
+                p
+                  label(for='amount') Range 3:
+                  input#amount3(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider3.slider-range
+                p
+                p
+                  label(for='amount') Range 4:
+                  input#amount4(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider4.slider-range
+                p
+                p
+                  label(for='amount') Range 5:
+                  input#amount5(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider5.slider-range
+                p
+                p
+                  label(for='amount') Range 6:
+                  input#amount6(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                #slider6.slider-range
+                p
+            // Autopan
+            #autopan.leaflet-sidebar-pane
+              h1.leaflet-sidebar-header
+                | Autopan
+                span.leaflet-sidebar-close
+                  i.fa.fa-caret-left
+              p
+                | Zoom to County
+
+    block map
+
+
+script(src='/javascripts/jquery.min.js')
+script(src='/javascripts/bootstrap.js')
+script(src='/javascripts/leaflet.js')
+
+
