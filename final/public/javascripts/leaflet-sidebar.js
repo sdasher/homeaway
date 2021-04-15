@@ -66,8 +66,8 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
         // use the container given via options.
         if (!container) {
             container = this._container || typeof this.options.container === 'string'
-                ? L.DomUtil.get(this.options.container)
-                : this.options.container;
+            ? L.DomUtil.get(this.options.container)
+            : this.options.container;
         }
 
         // if no container was specified or not found, create it and apply an ID
@@ -200,7 +200,7 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
         return this;
     },
 
-    /**
+   /**
      * Open sidebar (if it's closed) and show the specified tab.
      *
      * @param {string} id - The ID of the tab to show (without the # character)
@@ -498,14 +498,14 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
      *
      * @param {String} [openClose] The behaviour to enact ('open' | 'close')
      */
-    _panMap: function(openClose) {
+   _panMap: function(openClose) {
         var panWidth = Number.parseInt(L.DomUtil.getStyle(this._container, 'max-width')) / 2;
         if (
             openClose === 'open' && this.options.position === 'left' ||
             openClose === 'close' && this.options.position === 'right'
         ) panWidth *= -1;
         this._map.panBy([panWidth, 0], { duration: 0.5 });
-    }
+   }
 });
 
 /**

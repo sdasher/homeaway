@@ -1,14 +1,15 @@
 doctype html
 html
   head
-    title Sister County
-      link(rel='stylesheet' href='/stylesheets/leaflet.css')
-      link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-      link(href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet")
-      link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-      link(rel='stylesheet', href='/stylesheets/style.css')
+    title Philmont Campsite Finder
+    link(rel='stylesheet' href='/stylesheets/leaflet.css')
+    script(src='javascripts/leaflet.js')
+    script(src='javascripts/bootstrap.min.js')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
     .container
       // optionally define the sidebar content via HTML markup
       #sidebar.leaflet-sidebar.collapsed

@@ -1,0 +1,124 @@
+extends layout
+block content
+    body
+        // optionally define the sidebar content via HTML markup
+        #sidebar.leaflet-sidebar.collapsed
+            // nav tabs
+            .leaflet-sidebar-tabs
+                // top aligned tabs
+                ul(role='tablist')
+                    li
+                        a(href='#home' role='tab')
+                            i.fa.fa-bars.active
+                    li
+                        a(href='#autopan' role='tab')
+                            i.fa.fa-arrows
+
+            // panel content
+            .leaflet-sidebar-content
+                #home.leaflet-sidebar-pane
+                    h1.leaflet-sidebar-header
+                        | Sister Counties
+                        span.leaflet-sidebar-close
+                            i.fa.fa-caret-left
+                    h3 Facts About {County Name}
+                    ul
+                        li Population:
+                        li Median Income:
+                        li Political Affiliation:
+                        li Percent with Bachelor's Degree:
+                        li Social Capital:
+                        li Natural Amenities:
+
+                #autopan.leaflet-sidebar-pane
+                    h1.leaflet-sidebar-header
+                        | autopan
+                        span.leaflet-sidebar-close
+                            i.fa.fa-caret-left
+                    p
+                        code Leaflet.control.sidebar({ autopan: true })
+                        |                     makes shure that the map center always stays visible.
+                    p
+                        | The autopan behviour is responsive as well.
+                        | Try opening and closing the sidebar from this pane!
+                #messages.leaflet-sidebar-pane
+                    h1.leaflet-sidebar-header
+                        | Messages
+                        span.leaflet-sidebar-close
+                            i.fa.fa-caret-left
+        #map
+        script(src='https://unpkg.com/leaflet/dist/leaflet.js' crossorigin='')
+        script(src='/javascripts/leaflet-sidebar.js')
+        script.
+            var myData = !{JSON.stringify(jsonData)};
+            console.log("Map runs");
+            // Create variable to hold map element, give initial settings to map
+            var map = L.map('map', {center: [39.359967212949016, -111.6519904633779], zoom: 4});
+
+            // Add tiles from Mapbox
+            var accessToken = 'pk.eyJ1Ijoic2Rhc2hlciIsImEiOiJja2VwMzJidTkwb2Y0MnpwbmNzZzNwMXBtIn0.yISZa2w-PKhRAEaAyIl8ew';
+            L.tileLayer(
+                'https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+                    tileSize: 512,
+                    zoomOffset: -1,
+                    attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+            var layerControl = L.control.layers(null, null, {position: 'topright'}).addTo(map);
+
+            // Add JSON to map
+            L.geoJson(myData, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.f2);
+                }
+            }).addTo(map);
+            // create the sidebar instance and add it to the map
+            var sidebar = L.control.sidebar({container: 'sidebar'})
+                .addTo(map)
+                .open('home');
+            // add panels dynamically to the sidebar
+            sidebar
+                .addPanel({
+                    id: 'sliders',
+                    tab: '<i class="fa fa-filter"></i>',
+                    title: 'Filters',
+                    pane: '<p>Filter counties by the following criteria:\n' +
+                        '  <div class="list-group item-sidebar">\n' +
+                        '    <p>\n' +
+                        '      <label for="amount">Range 1:</label>\n' +
+                        '      <input id="amount1" readonly="" style="border:0; color:#f6931f; font-weight:bold;" type="text" />\n' +
+                        '    </p>\n' +
+                        '    <div class="slider-range" id="slider1"></div>\n' +
+                        '    <p></p>\n' +
+                        '    <p></p>\n' +
+                        '  </div>\n' +
+                        '</p>',
+                })
+
+
+            // be notified when a panel is opened
+            sidebar.on('content', function (ev) {
+                switch (ev.id) {
+                    case 'autopan':
+                        sidebar.options.autopan = true;
+                        break;
+                    default:
+                        sidebar.options.autopan = false;
+                }
+            });
+            var userid = 0
+            function addUser() {
+                sidebar.addPanel({
+                    id: 'user' + userid++,
+                    tab: '<i class="fa fa-user"></i>',
+                    title: 'User Profile ' + userid,
+                    pane: '<p>user ipsum dolor sit amet</p>',
+                });
+            }
+    scripts(src='/javascripts/slider.js')
+
+
+
+
+
+

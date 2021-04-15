@@ -1,0 +1,13 @@
+extends layout
+block content
+    .container
+        #panel
+        form.row(action='/filter', class='form-control-lg row')
+            input(type='text' placeholder='Filter Criteria 1...' name='filtername1')
+            input(type='text' placeholder='Min Value 1' name='filtervalue1min')
+            input(type='text' placeholder='Max Value 1' name='filtervalue1max')
+            input(type='text' placeholder='Filter Criteria 2' name='filtername2')
+            input(type='text' placeholder='Min Value 2' name='filtervalue2min')
+            input(type='text' placeholder='Max Value 2' name='filtervalue2max')
+            button(type='submit', class="btn btn-primary btn-lg")
+            i.fa.fa-search
