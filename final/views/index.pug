@@ -91,10 +91,10 @@ block content
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(
                         feature.properties.f2 + ", " + feature.properties.f3 +
-                        "<br>Population: " + feature.properties.f4
-                        +
+                        "<br>Population: " + feature.properties.f4+
+                        "<br>Median Age: "+feature.properties.f9+
                         "<br>Rent as % of Income: " + feature.properties.f14 +
-                        "<br>% White: " + feature.properties.f5/100 +
+                        "<br>% White: " + Math.round(feature.properties.f5/feature.properties.f4*1000)/10 +
                         "<br>% Democrat: " +
                         "<br>% College Grad:" +
                         "<br>Natural Amenities: "
