@@ -26,32 +26,87 @@ block content
                     .list-group.item-sidebar
                         p
                         form(method='get' action='/filter')
-                            label(for='amount1') Population:
-                            input#amount1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel1') Population:
+                            input#sliderLabel1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider1values')
                             #slider1.slider-range
                             p
-                            label(for='amount2') Median Age
-                            input#amount2(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel2') % White:
+                            input#sliderLabel2(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider2values')
                             #slider2.slider-range
                             p
-                            label(for='amount3') Rent as % of Income:
-                            input#amount3(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel3') % Black:
+                            input#sliderLabel3(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider3values')
                             #slider3.slider-range
                             p
-                            label(for='amount4') Social Capital
-                            input#amount1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel4') % LatinX:
+                            input#sliderLabel4(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider4values')
                             #slider4.slider-range
                             p
-                            label(for='amount5') Natural Amenities
-                            input#amount5(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel5') % Asian:
+                            input#sliderLabel5(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider5values')
                             #slider5.slider-range
                             p
-                            label(for='amount6') Natural Amenities
-                            input#amount6(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text')
+                            label(for='sliderLabel6') % Median Age:
+                            input#sliderLabel6(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider6values')
                             #slider6.slider-range
                             p
+                            label(for='sliderLabel7') % Republican:
+                            input#sliderLabel7(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider7values')
+                            #slider7.slider-range
+                            p
+                            label(for='sliderLabel8') % Democrat:
+                            input#sliderLabel8(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider8values')
+                            #slider8.slider-range
+                            p
+                            label(for='sliderLabel9') Religious Attendance:
+                            input#sliderLabel9(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider9values')
+                            #slider9.slider-range
+                            p
+                            label(for='sliderLabel10') Pop. per Square Mile:
+                            input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values')
+                            #slider10.slider-range
+                            p
+                            //label(for='sliderLabel10') Pop. per Square Mile:
+                            //input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values')
+                            //#slider10.slider-range
+                            //p
+                            label(for='sliderLabel11') Median Per Capita Income
+                            input#sliderLabel11(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider11values')
+                            #slider11.slider-range
+                            p
+                            label(for='sliderLabel12') Rent as % of Income:
+                            input#sliderLabel12(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider12values')
+                            #slider12.slider-range
+                            p
+                            label(for='sliderLabel13') % College Grad:
+                            input#sliderLabel13(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider13values')
+                            #slider13.slider-range
+                            p
+                            label(for='sliderLabel14') % Unemployment:
+                            input#sliderLabel14(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider14values')
+                            #slider14.slider-range
+                            p
+                            label(for='sliderLabel15') Natural Amenties Score:
+                            input#sliderLabel15(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider15values')
+                            #slider15.slider-range
+                            p
+                            label(for='sliderLabel16') Social Capital:
+                            input#sliderLabel16(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider16values')
+                            #slider16.slider-range
+                            p
+                            label(for='sliderLabel17') K12 Math Achievement:
+                            input#sliderLabel17(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider17values')
+                            #slider17.slider-range
+                            p
+                            label(for='sliderLabel18') K12 Language Arts Achievement:
+                            input#sliderLabel18(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider18values')
+                            #slider18.slider-range
+                            p
                             input(type='submit')
-                        p
+                        form.row(action='/', class='form-control-lg row')
+                            input(type='submit' value='Reset Sliders' class="btn btn-primary btn-lg")
+
+
 
                 #autopan.leaflet-sidebar-pane
                     h1.leaflet-sidebar-header
@@ -66,41 +121,13 @@ block content
                         | Messages
                         span.leaflet-sidebar-close
                             i.fa.fa-caret-left
-        #map
+
         script(src='https://unpkg.com/leaflet/dist/leaflet.js' crossorigin='')
         script(src='/javascripts/leaflet-sidebar.js')
+
+        #map
+        block map
         script.
-            var myData = !{JSON.stringify(jsonData)};
-            console.log("Map runs");
-            // Create variable to hold map element, give initial settings to map
-            var map = L.map('map', {center: [39.359967212949016, -111.6519904633779], zoom: 4});
-
-            // Add tiles from Mapbox
-            var accessToken = 'pk.eyJ1Ijoic2Rhc2hlciIsImEiOiJja2VwMzJidTkwb2Y0MnpwbmNzZzNwMXBtIn0.yISZa2w-PKhRAEaAyIl8ew';
-            L.tileLayer(
-                'https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
-                    tileSize: 512,
-                    zoomOffset: -1,
-                    attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(map);
-
-            var layerControl = L.control.layers(null, null, {position: 'topright'}).addTo(map);
-
-            // Add JSON to map
-            L.geoJson(myData, {
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup(
-                        feature.properties.f2 + ", " + feature.properties.f3 +
-                        "<br>Population: " + feature.properties.f4+
-                        "<br>Median Age: "+feature.properties.f9+
-                        "<br>Rent as % of Income: " + feature.properties.f14 +
-                        "<br>% White: " + Math.round(feature.properties.f5/feature.properties.f4*1000)/10 +
-                        "<br>% Democrat: " +
-                        "<br>% College Grad:" +
-                        "<br>Natural Amenities: "
-                    );
-                }
-            }).addTo(map);
             // create the sidebar instance and add it to the map
             var sidebar = L.control.sidebar({container: 'sidebar'})
                 .addTo(map)
@@ -112,10 +139,10 @@ block content
                     tab: '<i class="fa fa-info"></i>',
                     title: 'Variables',
                     pane: '<p>Description of Variables</p>>',
-            })
-
+            });
 
             // be notified when a panel is opened
+
             sidebar.on('content', function (ev) {
                 switch (ev.id) {
                     case 'autopan':
@@ -125,11 +152,4 @@ block content
                         sidebar.options.autopan = false;
                 }
             });
-
         script(src='/javascripts/slider.js')
-
-
-
-
-
-

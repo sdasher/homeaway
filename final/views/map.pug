@@ -1,2 +1,45 @@
-script(src='https://unpkg.com/leaflet@1.3.1/dist/leaflet.js')
-script(src='/javascripts/map.js')
+extends index
+block map
+    script.
+        var myData = !{JSON.stringify(jsonData)};
+        console.log("Map runs");
+        // Create variable to hold map element, give initial settings to map
+        var map = L.map('map', {center: [39.359967212949016, -111.6519904633779], zoom: 4});
+
+        // Add tiles from Mapbox
+        var accessToken = 'pk.eyJ1Ijoic2Rhc2hlciIsImEiOiJja2VwMzJidTkwb2Y0MnpwbmNzZzNwMXBtIn0.yISZa2w-PKhRAEaAyIl8ew';
+        L.tileLayer(
+            'https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+                tileSize: 512,
+                zoomOffset: -1,
+                attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+        var layerControl = L.control.layers(null, null, {position: 'topright'}).addTo(map);
+
+        // Add JSON to map
+        L.geoJson(myData, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(
+                    feature.properties.f2 + ", " + feature.properties.f3 +
+                    "<br>Population: " + feature.properties.f4 +
+                    "<br>% White: " + Math.round(feature.properties.f5 *10) / 10 +
+                    "<br>% Black: " + Math.round(feature.properties.f6 *10) / 10 +
+                    "<br>% LatinX:" + Math.round(feature.properties.f8 *10) / 10 +
+                    "<br>% Asian: " + Math.round(feature.properties.f7 *10) / 10 +
+                    "<br>Median Age: " + feature.properties.f9 +
+                    "<br>% Democrat: " + Math.round(feature.properties.f10 * 10) / 10 +
+                    "<br>% Republican: " + Math.round(feature.properties.f11 * 10) / 10 +
+                    "<br>Pop per Square Mile: " + feature.properties.f18 +
+                    "<br>Congregations per 1000 People: " + Math.round(feature.properties.f13*10) / 10 +
+                    "<br>Median Income: " + feature.properties.f12 +
+                    "<br>Rent as % of Income: " + feature.properties.f14 +
+                    "<br>% College Grad:" + Math.round(feature.properties.f16*10) / 10 +
+                    "<br>% Unemployment:" + Math.round(feature.properties.f17*10) / 10 +
+                    "<br>Natural Amenities Score: " + feature.properties.f19 +
+                    "<br>Social Capital: " + Math.round(feature.properties.f15*10) / 10 +
+                    "<br>K12 Math Achievement: " + Math.round(feature.properties.f20*100) / 100 +
+                    "<br>K12 Language Arts Achievement: " + Math.round(feature.properties.f21*100) / 100
+                );
+            }
+        }).addTo(map);
