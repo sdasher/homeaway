@@ -23,9 +23,7 @@ $("#slider1").slider({
     max: 14506494,
     values: getLabelValues($('#sliderLabel1').val(), 541, 14506494),
     slide: function (event, ui) {
-        // console.log(ui.values);
          $("#sliderLabel1").val(ui.values[0] + " - " + ui.values[1]);
-         // slider1values = $("#sliderLabel1").val().split(" - ");
     }
 });
 
@@ -37,10 +35,9 @@ $("#sliderLabel1").val($("#slider1").slider("values", 0) +
 $("#slider2").slider({
     range: true,
     min: 12, max: 99,
-    values: [12,99],
+    values: getLabelValues($('#sliderLabel2').val(), 12, 99),
     slide: function (event, ui) {
         $("#sliderLabel2").val(ui.values[0] + " - " + ui.values[1]);
-        slider2values = $("#sliderLabel2").val().split(" - ");
     }
 });
 
@@ -52,10 +49,9 @@ $("#slider3").slider({
     range: true,
     min: 0,
     max: 82,
-    values: [0, 82],
+    values: getLabelValues($('#sliderLabel3').val(), 0, 82),
     slide: function (event, ui) {
         $("#sliderLabel3").val(ui.values[0] + " - " + ui.values[1]);
-       // slider3values = $("#sliderLabel3").val().split(" - ");
     }
 });
 
@@ -67,10 +63,9 @@ $("#slider4").slider({
     range: true,
     min: 0,
     max: 49,
-    values: [0, 49],
+    values: getLabelValues($('#sliderLabel4').val(), 0, 49),
     slide: function (event, ui) {
         $("#sliderLabel4").val(ui.values[0] + " - " + ui.values[1]);
-        slider4values = $("#sliderLabel4").val().split(" - ");
     }
 });
 $("#sliderLabel4").val($("#slider4").slider("values", 0) +
@@ -81,10 +76,9 @@ $("#slider5").slider({
     range: true,
     min: 0,
     max: 29,
-    values: [0, 29],
+    values: getLabelValues($('#sliderLabel5').val(), 0, 29),
     slide: function (event, ui) {
         $("#sliderLabel5").val(ui.values[0] + " - " + ui.values[1]);
-        slider5values = $("#sliderLabel5").val().split(" - ");
     }
 });
 $("#sliderLabel5").val($("#slider5").slider("values", 0) +
@@ -95,10 +89,10 @@ $("#slider6").slider({
     range: true,
     min: 22.6,
     max: 62,
-    values: [22.6, 62.5],
+    values: getLabelValues($('#sliderLabel6').val(), 22, 63),
     slide: function (event, ui) {
         $("#sliderLabel6").val(ui.values[0] + " - " + ui.values[1]);
-        slider6values = $("#sliderLabel6").val().split(" - ");
+
     }
 });
 $("#sliderLabel6").val($("#slider6").slider("values", 0) +
@@ -109,11 +103,10 @@ $("#slider7").slider({
     range: true,
     min: 9,
     max: 92,
-    values:[9, 93],
+    values:getLabelValues($('#sliderLabel7').val(), 8, 93),
     slide: function (event, ui) {
-        // console.log(ui.values);
         $("#sliderLabel7").val(ui.values[0] + " - " + ui.values[1]);
-        slider7values = $("#sliderLabel7").val().split(" - ");
+
     }
 });
 
@@ -125,10 +118,10 @@ $("#sliderLabel7").val($("#slider7").slider("values", 0) +
 $("#slider8").slider({
     range: true,
     min: 4.6, max: 87.6,
-    values: [4.6, 87.6],
+    values: getLabelValues($('#sliderLabel8').val(), 4, 88),
     slide: function (event, ui) {
         $("#sliderLabel8").val(ui.values[0] + " - " + ui.values[1]);
-        slider8values = $("#sliderLabel8").val().split(" - ");
+
     }
 });
 
@@ -140,10 +133,9 @@ $("#slider9").slider({
     range: true,
     min: 0,
     max: 11,
-    values: [0, 11],
+    values: getLabelValues($('#sliderLabel9').val(), 0, 11),
     slide: function (event, ui) {
         $("#sliderLabel9").val(ui.values[0] + " - " + ui.values[1]);
-        slider9values = $("#sliderLabel9").val().split(" - ");
     }
 });
 
@@ -155,10 +147,9 @@ $("#slider10").slider({
     range: true,
     min: 0,
     max: 73032,
-    values: [0, 73032],
+    values: getLabelValues($('#sliderLabel10').val(), 0, 73032),
     slide: function (event, ui) {
         $("#sliderLabel10").val(ui.values[0] + " - " + ui.values[1]);
-        slider10values = $("#sliderLabel10").val().split(" - ");
     }
 });
 
@@ -170,10 +161,10 @@ $("#slider11").slider({
     range: true,
     min: 10388,
     max: 76592,
-    values: [10388, 76592],
+    values: getLabelValues($('#sliderLabel11').val(), 10388, 76592),
     slide: function (event, ui) {
         $("#sliderLabel11").val(ui.values[0] + " - " + ui.values[1]);
-        slider11values = $("#sliderLabel11").val().split(" - ");
+
     }
 });
 $("#sliderLabel11").val($("#slider11").slider("values", 0) +
@@ -184,10 +175,10 @@ $("#slider12").slider({
     range: true,
     min: 9,
     max: 51,
-    values: [9, 51],
+    values: getLabelValues($('#sliderLabel12').val(), 9, 51),
     slide: function (event, ui) {
         $("#sliderLabel12").val(ui.values[0] + " - " + ui.values[1]);
-        slider12values = $("#sliderLabel12").val().split(" - ");
+
     }
 });
 $("#sliderLabel12").val($("#slider12").slider("values", 0) +
@@ -198,17 +189,13 @@ $("#slider13").slider({
     range: true,
     min: 0,
     max: 46,
-    values: [0, 46],
+    values: getLabelValues($('#sliderLabel13').val(), 0, 46),
     slide: function (event, ui) {
-        // console.log(ui.values);
         $("#sliderLabel13").val(ui.values[0] + " - " + ui.values[1]);
-        slider13values = $("#sliderLabel13").val().split(" - ");
-
     }
 
 });
 
-console.log("slider.js Added to SLider 1. REady to add sliderLabel 1");
 $("#sliderLabel13").val($("#slider13").slider("values", 0) +
     " - " + $("#slider13").slider("values", 1));
 
@@ -216,11 +203,12 @@ $("#sliderLabel13").val($("#slider13").slider("values", 0) +
 // % Unemp
 $("#slider14").slider({
     range: true,
-    min: 0, max: 15,
-    values: [0, 15],
+    min: 0,
+    max: 15,
+    values: getLabelValues($('#sliderLabel14').val(), 0, 15),
     slide: function (event, ui) {
         $("#sliderLabel14").val(ui.values[0] + " - " + ui.values[1]);
-        slider14values = $("#sliderLabel14").val().split(" - ");
+
     }
 });
 
@@ -232,10 +220,10 @@ $("#slider15").slider({
     range: true,
     min: -6.1,
     max: 11.2,
-    values: [-6.1, 11.2],
+    values: getLabelValues($('#sliderLabel15').val(), -6.1, 11.2),
     slide: function (event, ui) {
         $("#sliderLabel15").val(ui.values[0] + " - " + ui.values[1]);
-        slider15values = $("#sliderLabel15").val().split(" - ");
+
     }
 });
 
@@ -248,10 +236,9 @@ $("#slider16").slider({
     range: true,
     min: -4,
     max: 22,
-    values: [-3.2, 7.8],
+    values: getLabelValues($('#sliderLabel16').val(), -4, 22),
     slide: function (event, ui) {
         $("#sliderLabel16").val(ui.values[0] + " - " + ui.values[1]);
-        slider16values = $("#sliderLabel16").val().split(" - ");
     }
 });
 
@@ -262,10 +249,10 @@ $("#slider17").slider({
     range: true,
     min: -3.5,
     max: 3.5,
-    values: [-3, 3],
+    values: getLabelValues($('#sliderLabel17').val(), -3.5, 3.5),
     slide: function (event, ui) {
         $("#sliderLabel17").val(ui.values[0] + " - " + ui.values[1]);
-        slider17values = $("#sliderLabel17").val().split(" - ");
+
     }
 });
 $("#sliderLabel17").val($("#slider17").slider("values", 0) +
@@ -275,10 +262,9 @@ $("#slider18").slider({
     range: true,
     min: -4.5,
     max: 2.5,
-    values: [-4.5, 2.5],
+    values: getLabelValues($('#sliderLabel18').val(), -4.5, 2.5),
     slide: function (event, ui) {
         $("#sliderLabel18").val(ui.values[0] + " - " + ui.values[1]);
-        slider18values = $("#sliderLabel18").val().split(" - ");
     }
 });
 $("#sliderLabel18").val($("#slider18").slider("values", 0) +

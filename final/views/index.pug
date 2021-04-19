@@ -24,90 +24,87 @@ block content
                     p
                         | Filter counties by the following criteria:
                     .list-group.item-sidebar
+                        form(method='get' action='/' )
+                            input(type='submit' class='sliderbutton' value='Reset Sliders')
                         p
-                        p This is #{monkeys}.
-                        - var monkeydo= monkeys
                         form(method='get' action='/filter')
-                            input(type='submit')
+                            input(type='submit' class='sliderbutton')
                             p
                             label(for='sliderLabel1') Population:
-                            input#sliderLabel1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider1values' value=monkeydo)
+                            input#sliderLabel1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider1values' value=monkey1)
                             #slider1.slider-range
                             p
                             label(for='sliderLabel2') % White:
-                            input#sliderLabel2(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider2values')
+                            input#sliderLabel2(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider2values' value=monkey2)
                             #slider2.slider-range
                             p
                             label(for='sliderLabel3') % Black:
-                            input#sliderLabel3(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider3values')
+                            input#sliderLabel3(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider3values' value=monkey3)
                             #slider3.slider-range
                             p
                             label(for='sliderLabel4') % LatinX:
-                            input#sliderLabel4(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider4values')
+                            input#sliderLabel4(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider4values' value=monkey4)
                             #slider4.slider-range
                             p
                             label(for='sliderLabel5') % Asian:
-                            input#sliderLabel5(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider5values')
+                            input#sliderLabel5(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider5values' value=monkey5)
                             #slider5.slider-range
                             p
                             label(for='sliderLabel6') % Median Age:
-                            input#sliderLabel6(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider6values')
+                            input#sliderLabel6(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider6values' value=monkey6)
                             #slider6.slider-range
                             p
                             label(for='sliderLabel7') % Republican:
-                            input#sliderLabel7(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider7values')
+                            input#sliderLabel7(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider7values' value=monkey7)
                             #slider7.slider-range
                             p
                             label(for='sliderLabel8') % Democrat:
-                            input#sliderLabel8(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider8values')
+                            input#sliderLabel8(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider8values' value=monkey8 )
                             #slider8.slider-range
                             p
-                            label(for='sliderLabel9') Congregations per 1000 Residents:
-                            input#sliderLabel9(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider9values')
+                            label(for='sliderLabel9') Congregations per 1000:
+                            input#sliderLabel9(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider9values' value=monkey9)
                             #slider9.slider-range
                             p
                             label(for='sliderLabel10') Pop. per Square Mile:
-                            input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values')
+                            input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values' value=monkey10)
                             #slider10.slider-range
                             p
 
                             label(for='sliderLabel11') Median Per Capita Income
-                            input#sliderLabel11(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider11values')
+                            input#sliderLabel11(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider11values' value=monkey11)
                             #slider11.slider-range
                             p
                             label(for='sliderLabel12') Rent as % of Income:
-                            input#sliderLabel12(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider12values')
+                            input#sliderLabel12(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider12values' value=monkey12)
                             #slider12.slider-range
                             p
                             label(for='sliderLabel13') % College Grad:
-                            input#sliderLabel13(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider13values')
+                            input#sliderLabel13(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider13values' value=monkey13)
                             #slider13.slider-range
                             p
                             label(for='sliderLabel14') % Unemployment:
-                            input#sliderLabel14(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider14values')
+                            input#sliderLabel14(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider14values' value=monkey14)
                             #slider14.slider-range
                             p
                             label(for='sliderLabel15') Natural Amenties Score:
-                            input#sliderLabel15(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider15values')
+                            input#sliderLabel15(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider15values' value=monkey15)
                             #slider15.slider-range
                             p
                             label(for='sliderLabel16') Social Capital:
-                            input#sliderLabel16(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider16values')
+                            input#sliderLabel16(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider16values' value=monkey16 )
                             #slider16.slider-range
                             p
                             label(for='sliderLabel17') K12 Math Achievement:
-                            input#sliderLabel17(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider17values')
+                            input#sliderLabel17(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider17values' value=monkey17)
                             #slider17.slider-range
                             p
-                            label(for='sliderLabel18') K12 Language Arts Achievement:
-                            input#sliderLabel18(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider18values')
+                            label(for='sliderLabel18') K12 Lang. Achievement:
+                            input#sliderLabel18(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider18values' value=monkey18)
                             #slider18.slider-range
                             p
-                            input(type='submit')
-                        form.row(action='/', class='form-control-lg row')
-                            input(type='submit' value='Reset Sliders' class="btn btn-primary btn-lg")
-
-
+                        form(method='get' action='/filter')
+                            input(type='submit' class='sliderbutton')
 
                 #autopan.leaflet-sidebar-pane
                     h1.leaflet-sidebar-header
