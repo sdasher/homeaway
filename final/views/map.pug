@@ -19,27 +19,31 @@ block map
 
         // Add JSON to map
         L.geoJson(myData, {
+            style: function (feature) {
+                return {color: "#009999", weight: 1, opacity: 1, fillOpacity: 0};
+            },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(
-                    feature.properties.f2 + ", " + feature.properties.f3 +
+                    "<div id='#popupheader'>" + feature.properties.f2 + " County, " + feature.properties.f3 + "</div>" +
                     "<br>Population: " + feature.properties.f4 +
-                    "<br>% White: " + Math.round(feature.properties.f5 *10) / 10 +
-                    "<br>% Black: " + Math.round(feature.properties.f6 *10) / 10 +
-                    "<br>% LatinX:" + Math.round(feature.properties.f8 *10) / 10 +
-                    "<br>% Asian: " + Math.round(feature.properties.f7 *10) / 10 +
+                    "<br>% White: " + Math.round(feature.properties.f5 * 10) / 10 +
+                    "<br>% Black: " + Math.round(feature.properties.f6 * 10) / 10 +
+                    "<br>% LatinX: " + Math.round(feature.properties.f8 * 10) / 10 +
+                    "<br>% Asian: " + Math.round(feature.properties.f7 * 10) / 10 +
                     "<br>Median Age: " + feature.properties.f9 +
                     "<br>% Democrat: " + Math.round(feature.properties.f10 * 10) / 10 +
                     "<br>% Republican: " + Math.round(feature.properties.f11 * 10) / 10 +
                     "<br>Pop per Square Mile: " + feature.properties.f18 +
-                    "<br>Congregations per 1000 People: " + Math.round(feature.properties.f13*10) / 10 +
+                    "<br>Congregations per 1000 People: " + Math.round(feature.properties.f13 * 10) / 10 +
                     "<br>Median Income: " + feature.properties.f12 +
                     "<br>Rent as % of Income: " + feature.properties.f14 +
-                    "<br>% College Grad:" + Math.round(feature.properties.f16*10) / 10 +
-                    "<br>% Unemployment:" + Math.round(feature.properties.f17*10) / 10 +
+                    "<br>% College Grad:" + Math.round(feature.properties.f16 * 10) / 10 +
+                    "<br>% Unemployment:" + Math.round(feature.properties.f17 * 10) / 10 +
                     "<br>Natural Amenities Score: " + feature.properties.f19 +
-                    "<br>Social Capital: " + Math.round(feature.properties.f15*10) / 10 +
-                    "<br>K12 Math Achievement: " + Math.round(feature.properties.f20*100) / 100 +
-                    "<br>K12 Language Arts Achievement: " + Math.round(feature.properties.f21*100) / 100
+                    "<br>Social Capital: " + Math.round(feature.properties.f15 * 10) / 10 +
+                    "<br>K12 Math Achievement: " + Math.round(feature.properties.f20 * 100) / 100 +
+                    "<br>K12 Language Arts Achievement: " + Math.round(feature.properties.f21 * 100) / 100
                 );
             }
         }).addTo(map);
+

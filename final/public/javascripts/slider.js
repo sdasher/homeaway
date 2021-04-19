@@ -1,13 +1,31 @@
 //Population
+// function getLabelValues(input_id, min, max){
+//     var val=$(input_id).val();
+//     if (val != null && val.split(" - ").length==2 ) {
+//         min = $(input_id).val().split(" - ")[0];
+//         max = $(input_id).val().split(" - ")[1];
+//     }
+//     return [min, max];
+// }
+
+function getLabelValues(val, min, max){
+
+    if (val != null && val.split(" - ").length==2 ) {
+        min = val.split(" - ")[0];
+        max = val.split(" - ")[1];
+    }
+    return [min, max];
+}
+
 $("#slider1").slider({
     range: true,
     min: 541,
     max: 14506494,
-    values: [541, 14506494],
+    values: getLabelValues($('#sliderLabel1').val(), 541, 14506494),
     slide: function (event, ui) {
         // console.log(ui.values);
          $("#sliderLabel1").val(ui.values[0] + " - " + ui.values[1]);
-         slider1values = $("#sliderLabel1").val().split(" - ");
+         // slider1values = $("#sliderLabel1").val().split(" - ");
     }
 });
 
@@ -37,7 +55,7 @@ $("#slider3").slider({
     values: [0, 82],
     slide: function (event, ui) {
         $("#sliderLabel3").val(ui.values[0] + " - " + ui.values[1]);
-        slider3values = $("#sliderLabel3").val().split(" - ");
+       // slider3values = $("#sliderLabel3").val().split(" - ");
     }
 });
 
@@ -99,7 +117,6 @@ $("#slider7").slider({
     }
 });
 
-console.log("slider.js Added to SLider 1. REady to add sliderLabel 1");
 $("#sliderLabel7").val($("#slider7").slider("values", 0) +
     " - " + $("#slider7").slider("values", 1));
 

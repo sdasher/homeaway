@@ -25,9 +25,13 @@ block content
                         | Filter counties by the following criteria:
                     .list-group.item-sidebar
                         p
+                        p This is #{monkeys}.
+                        - var monkeydo= monkeys
                         form(method='get' action='/filter')
+                            input(type='submit')
+                            p
                             label(for='sliderLabel1') Population:
-                            input#sliderLabel1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider1values')
+                            input#sliderLabel1(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider1values' value=monkeydo)
                             #slider1.slider-range
                             p
                             label(for='sliderLabel2') % White:
@@ -58,7 +62,7 @@ block content
                             input#sliderLabel8(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider8values')
                             #slider8.slider-range
                             p
-                            label(for='sliderLabel9') Religious Attendance:
+                            label(for='sliderLabel9') Congregations per 1000 Residents:
                             input#sliderLabel9(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider9values')
                             #slider9.slider-range
                             p
@@ -66,10 +70,7 @@ block content
                             input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values')
                             #slider10.slider-range
                             p
-                            //label(for='sliderLabel10') Pop. per Square Mile:
-                            //input#sliderLabel10(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider10values')
-                            //#slider10.slider-range
-                            //p
+
                             label(for='sliderLabel11') Median Per Capita Income
                             input#sliderLabel11(readonly='' style='border:0; color:#f6931f; font-weight:bold;' type='text' name='slider11values')
                             #slider11.slider-range
